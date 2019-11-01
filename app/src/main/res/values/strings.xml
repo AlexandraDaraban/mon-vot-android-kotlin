@@ -76,6 +76,9 @@
     <string name="polling_station_choose_date_leave">Choose the date of your departure</string>
     <string name="polling_station_choose_time_leave">Choose the time of your departure</string>
     <string name="button_continue_to_forms">Continue to forms</string>
+    <string name="polling_station_ask_for_leave_time">Do you want to fill the time of your departure?</string>
+    <string name="polling_station_ask_for_leave_time_yes">Yes</string>
+    <string name="polling_station_ask_for_leave_time_no">No</string>
 
     <string name="invalid_polling_station_environment">Choose urban or rural</string>
     <string name="invalid_polling_station_gender">Choose man or woman</string>

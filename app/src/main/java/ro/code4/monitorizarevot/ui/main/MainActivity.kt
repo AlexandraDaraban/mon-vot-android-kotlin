@@ -1,6 +1,7 @@
 package ro.code4.monitorizarevot.ui.main
 
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
@@ -60,8 +61,8 @@ class MainActivity : BaseActivity<MainViewModel>() {
             } else {
                 when (item.itemId) {
                     R.id.nav_change_polling_station -> {
-                        viewModel.notifyChangeRequested()
-                        changePollingStation()
+                        updatePollingStation()
+
                         true
                     }
                     R.id.nav_call -> {
@@ -81,6 +82,28 @@ class MainActivity : BaseActivity<MainViewModel>() {
         viewModel.onLogoutLiveData().observe(this, Observer {
             startActivityWithoutTrace(LoginActivity::class.java)
         })
+    }
+
+    fun updatePollingStation() {
+        AlertDialog.Builder(this, R.style.AlertDialog)
+            .setMessage(R.string.polling_station_ask_for_leave_time)
+            .setNegativeButton(
+                R.string.polling_station_ask_for_leave_time_no
+            ) { p0, _ ->
+                p0.dismiss()
+                goToPollingStation()
+            }
+            .setPositiveButton(R.string.polling_station_ask_for_leave_time_yes) { p0, p1 ->
+                goToPollingStation()
+            }
+            .show()
+
+
+    }
+
+    fun goToPollingStation() {
+        viewModel.notifyChangeRequested()
+        changePollingStation()
     }
 
     override fun onSupportNavigateUp(): Boolean {

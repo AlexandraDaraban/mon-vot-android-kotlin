@@ -2,7 +2,6 @@ package ro.code4.monitorizarevot.ui.forms
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.widget_change_polling_station_bar.*
@@ -11,7 +10,6 @@ import org.parceler.Parcels
 import ro.code4.monitorizarevot.R
 import ro.code4.monitorizarevot.helper.Constants.FORM
 import ro.code4.monitorizarevot.helper.Constants.QUESTION
-import ro.code4.monitorizarevot.helper.changePollingStation
 import ro.code4.monitorizarevot.helper.replaceFragment
 import ro.code4.monitorizarevot.ui.base.BaseFragment
 import ro.code4.monitorizarevot.ui.forms.questions.QuestionsDetailsFragment
@@ -75,8 +73,7 @@ class FormsFragment : BaseFragment<FormsViewModel>() {
         })
 
         pollingStationBarButton.setOnClickListener {
-            viewModel.notifyChangeRequested()
-            (activity as AppCompatActivity).changePollingStation()
+            (activity as MainActivity).updatePollingStation()
         }
         childFragmentManager.replaceFragment(
             R.id.content,

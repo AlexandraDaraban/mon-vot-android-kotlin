@@ -76,6 +76,9 @@
     <string name="polling_station_choose_date_leave">Alege data plecării</string>
     <string name="polling_station_choose_time_leave">Alege ora plecării</string>
     <string name="button_continue_to_forms">Continuă către formulare</string>
+    <string name="polling_station_ask_for_leave_time">Dorești să completezi ora plecării?</string>
+    <string name="polling_station_ask_for_leave_time_yes">Da</string>
+    <string name="polling_station_ask_for_leave_time_no">Nu</string>
 
     <string name="invalid_polling_station_environment">Alege urban sau rural</string>
     <string name="invalid_polling_station_gender">Alege bărbat sau femeie</string>
